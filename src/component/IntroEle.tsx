@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import logoWhite from "../../src/assets/logo_white.png";
 import logo from "../../src/assets/logo.png";
@@ -6,25 +6,25 @@ import logo from "../../src/assets/logo.png";
 const IntroEle: FC = () => {
   const animateLogo = useAnimation();
 
-  setTimeout(() => {
-    animateLogo.start({
-      opacity: [0, 0, 0, 0, 1],
-      transition: {
-        duration: 2,
-      },
-    });
-  }, 0);
-
-  setTimeout(() => {
-    animateLogo.start({
-      opacity: [1, 0],
-      transition: {
-        duration: 1.5,
-      },
-    });
-  }, 2000);
-
-
+  useEffect(()=>{
+    setTimeout(() => {
+      animateLogo.start({
+        opacity: [0, 0, 0, 0, 1],
+        transition: {
+          duration: 2,
+        },
+      });
+    }, 0);
+  
+    setTimeout(() => {
+      animateLogo.start({
+        opacity: [1, 0],
+        transition: {
+          duration: 1.5,
+        },
+      });
+    }, 2000);
+  },[])
 
   return (
     <div

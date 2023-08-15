@@ -7,7 +7,12 @@ import {
   useTransform,
   MotionValue,
 } from "framer-motion";
-import { homeGroupImg, ecgGroupImg, mnGroupImg } from "../ImageExporter";
+import {
+  homeGroupImg,
+  ecgGroupImg,
+  mnGroupImg,
+  white_close,
+} from "../ImageExporter";
 import { WORKS } from "../Constants";
 
 type props = {
@@ -35,9 +40,16 @@ const NewP: FC<props> = ({ project, closeFunc }) => {
   return (
     <div className="bg-opacity-30 backdrop-blur-3xl">
       <div className="h-16 w-[100vw] sticky top-0 flex flex-col justify-center items-end z-10">
-        <div className="h-12 w-12 bg-slate-100 mr-5 " onClick={()=>{
-          closeFunc()
-        }}/>
+        <div
+          className="h-12 w-12 mr-5"
+          style={{
+            backgroundImage: `url(${white_close})`,
+            backgroundSize: 'contain'
+          }}
+          onClick={() => {
+            closeFunc();
+          }}
+        />
       </div>
       <motion.div
         className="progress"
@@ -47,7 +59,7 @@ const NewP: FC<props> = ({ project, closeFunc }) => {
         }}
       />
       {imgList.map((image, index) => (
-        <Image src={image} id={index + 1} />
+        <Image src={image} id={index + 1} key={image} />
       ))}
       <motion.div
         className="progress"

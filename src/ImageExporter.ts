@@ -21,6 +21,17 @@ import mn1 from  '../src/assets/memay/mn1.png';
 import mn2 from  '../src/assets/memay/mn2.png';
 import mn3 from  '../src/assets/memay/mn3.png';
 
+
+import back3 from "./assets/background3.jpg";
+import back4 from "./assets/background4.jpg";
+import back2 from "./assets/background2.jpg";
+import back5 from "./assets/background5.jpg";
+import handHome from "./assets/handHome.png";
+import handEcg from "./assets/handEcg.png";
+import handMemay from "./assets/handMemay.png";
+
+import white_close from './assets/close_white.png'
+
 export {
   ecg_mock0,
   ecg_mock1,
@@ -43,7 +54,17 @@ export {
   mn0,
   mn1,
   mn2,
-  mn3
+  mn3,
+
+  back2,
+  back3,
+  back4,
+  back5,
+  handEcg,
+  handHome, 
+  handMemay,
+
+  white_close
 };
 
 const ecgGroupImg = [ecg_mock0,
