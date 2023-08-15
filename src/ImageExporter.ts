@@ -30,7 +30,10 @@ import handHome from "./assets/handHome.png";
 import handEcg from "./assets/handEcg.png";
 import handMemay from "./assets/handMemay.png";
 
-import white_close from './assets/close_white.png'
+import white_close from './assets/close_white.png';
+
+import hubble_background from './assets/background/hubble_background.png';
+import astranaut from './assets/astranaut.png';
 
 export {
   ecg_mock0,
@@ -64,7 +67,10 @@ export {
   handHome, 
   handMemay,
 
-  white_close
+  white_close,
+
+  hubble_background,
+  astranaut
 };
 
 const ecgGroupImg = [ecg_mock0,

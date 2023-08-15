@@ -1,12 +1,12 @@
 import Lottie from "lottie-react";
 import { FC } from "react";
 import MobileAnim from "../assets/mobile.json";
+import { astranaut, hubble_background } from "../ImageExporter";
 
 const PersonalInfo:FC = () =>{
     return(
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6 h-[auto] w-[100vw] text-white">
-            <div className="row-span-1 flex flex-col">
-
+        <div className= {"grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-6 h-[100vh] w-[100vw] text-white" + ``} >
+            <div className="row-span-1 flex flex-col z-30">
               <div className="flex-1">
               <div className=" font-Halimun text-6xl mt-[10%] w-fit px-12">Abhishek</div>
               <div className="font-Halimun text-6xl mt-10 md:ml-[40%] ml-16">Verma</div>
@@ -30,11 +30,14 @@ const PersonalInfo:FC = () =>{
             
             {/* <div className="row-span-1 bg-green-100 "> */}
             <Lottie
-                className="self-center justify-self-center w-[75%]"
+                className="self-center w-[75%] justify-self-center"
                 animationData={MobileAnim}
               ></Lottie>
+            {/* <img className="self-center w-[100%] h-[100%] justify-self-center object-scale-down"
+            src={astranaut}>
+            </img> */}
             {/* </div> */}
-          </div>
+        </div>
     )
 }
 
