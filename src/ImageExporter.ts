@@ -15,6 +15,9 @@ import home_mock5 from '../src/assets/home/home_mock5.png';
 import home_mock6 from '../src/assets/home/home_mock6.png';
 import home_mock7 from '../src/assets/home/home_mock7.png';
 import home_mock8 from '../src/assets/home/home_mock8.png';
+import home_mock9 from '../src/assets/home/home_mock9.png';
+import home_mock10 from '../src/assets/home/home_mock10.png';
+import home_mock11 from '../src/assets/home/home_mock11.png';
 
 import mn0 from  '../src/assets/memay/mn0.png';
 import mn1 from  '../src/assets/memay/mn1.png';
@@ -49,6 +52,9 @@ export {
   home_mock2,
   home_mock3,
   home_mock4,
+  home_mock9,
+  home_mock10,
+  home_mock11,
   home_mock5,
   home_mock6,
   home_mock7,
@@ -73,22 +79,30 @@ export {
   astranaut
 };
 
-const ecgGroupImg = [ecg_mock0,
-  ecg_mock1,
+const ecgGroupImg = [
+  ecg_mock5,
   ecg_mock3,
   ecg_mock4,
-  ecg_mock5,
-  ecg_mock6,];
+  ecg_mock6,
+  ecg_mock1,
+  ecg_mock0,
+  ecg_mock2
+];
 
-const homeGroupImg = [home_mock0,
+const homeGroupImg = [
+  home_mock6,
+  home_mock9,
+  home_mock10,
+  home_mock11,
+  home_mock0,
   home_mock1,
-  home_mock2,
   home_mock3,
   home_mock4,
   home_mock5,
-  home_mock6,
   home_mock7,
-  home_mock8,];
+  home_mock8,
+  home_mock2,
+];
 
 const mnGroupImg = [ mn0,
   mn1,
