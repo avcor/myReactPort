@@ -1,5 +1,5 @@
-import { FC, useEffect, useRef, useState } from "react";
-import IntroEle from "./component/introEle";
+import { useEffect, useRef, useState } from "react";
+import Intro from "./component/Intro";
 import NewP from "./component/NewP";
 import { SCREENS, WORKS } from "./Constants";
 import MainPageWork from "./component/MainPageWork";
@@ -21,7 +21,7 @@ function App() {
   let content;
 
   if (active === "INTRO") {
-    content = <IntroEle />;
+    content = <Intro />;
   } else if (active === "MAINPAGE") {
     content = (
       <MainPageWork

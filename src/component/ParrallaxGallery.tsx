@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FC, useRef } from "react";
-import logo from "../../src/assets/logo_white.png";
 
 const ParallaxGallery: FC<{ id: string }> = ({ id }) => {
     let path = 'home/home_mock';

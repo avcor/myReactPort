@@ -1,7 +1,6 @@
 import Lottie from "lottie-react";
 import { FC } from "react";
 import MobileAnim from "../assets/mobile.json";
-import { astranaut, hubble_background } from "../ImageExporter";
 
 const PersonalInfo:FC = () =>{
     return(

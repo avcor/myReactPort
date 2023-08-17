@@ -1,9 +1,9 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import logoWhite from "../../src/assets/logo_white.png";
 import logo from "../../src/assets/logo.png";
 
-const IntroEle: FC = () => {
+const Intro: FC = () => {
   const animateLogo = useAnimation();
 
   useEffect(()=>{
@@ -84,4 +84,4 @@ const IntroEle: FC = () => {
   );
 };
 
-export default IntroEle;
+export default Intro;
