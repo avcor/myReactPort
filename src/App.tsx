@@ -52,6 +52,7 @@ function App() {
           background: backG === "" ? `url(${backG})` : `url(${backG})`,
           objectFit: "scale-down",
         }}
+        className=" font-Montserrat"
       >
         {content}
       </div>
