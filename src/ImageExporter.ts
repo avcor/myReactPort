@@ -39,7 +39,6 @@ import astranaut from "./assets/astranaut.png";
 
 import mobileJson from "./assets/mobile.json";
 
-import test from "./assets/test.png";
 import testMov from "./assets/test.mp4";
 
 export {
@@ -77,7 +76,6 @@ export {
   hubble_background,
   astranaut,
   mobileJson,
-  test,
   testMov,
 };
 
