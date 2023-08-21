@@ -38,8 +38,15 @@ const Introduction: FC = () => {
   });
 
   return (
-    <div className=" " ref={refr}>
-      <div className=" min-h-screen w-[100vw] bg-black flex flex-col justify-center items-center snap-div">
+    <div className="" ref={refr}>
+      {/* <video
+        className=" fixed inset-0 h-[100vh] w-[100vw] z-10 bg-black "
+        style={{ visibility: collapse ? "collapse" : "visible" }}
+        src={testMov}
+        muted
+        ref={videoRef}
+      ></video> */}
+      <div className=" min-h-screen w-[100vw]  flex flex-col justify-center items-center ">
         <div
           className="  items-center flex flex-col"
           // style={{ visibility: vis ? "visible" : "hidden" }}
@@ -51,7 +58,7 @@ const Introduction: FC = () => {
         </div>
       </div>
 
-      <div className=" min-h-screen bg-black flex flex-col justify-center items-center snap-div">
+      <div className=" min-h-screen  flex flex-col justify-center items-center ">
         <div
           className="  items-center flex flex-col"
           // style={{ visibility: vis ? "hidden" : "visible" }}
