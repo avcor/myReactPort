@@ -51,7 +51,7 @@ const Introduction: FC = () => {
           className="  items-center flex flex-col"
           // style={{ visibility: vis ? "visible" : "hidden" }}
         >
-          <p className="font-Halimun text-5xl">Abhishek Verma</p>
+          <p className="font-Halimun text-5xl text-center">Abhishek Verma</p>
           <p className="font-Montserrat text-sm mt-5">
             Mobile Application Developer
           </p>

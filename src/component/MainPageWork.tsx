@@ -3,9 +3,9 @@ import { SCREENS, WORKS } from "../Constants";
 import Introduction from "./Introduction";
 import VelocityText from "./VelocityText";
 import "../../Introduction.css";
-import { back2, handMemay } from "../ImageExporter";
 import AppContext from "../AppContext";
-import ProjectImage from "./ProjectImage";
+import ProjectImage1 from "./ProjectImage1";
+import ProjectImage2 from "./ProjectImage2";
 
 type props = {
   backG: string;
@@ -24,7 +24,11 @@ const MainPageWork: FC<props> = ({}) => {
 
       <VelocityText />
 
-      <ProjectImage />
+      <ProjectImage1 work={"HOME"} />
+
+      <ProjectImage2 />
+
+      <ProjectImage1 work={"MEMAY"} />
     </div>
   );
 };
