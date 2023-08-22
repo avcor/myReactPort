@@ -1,5 +1,4 @@
 import { FC, useRef, useState } from "react";
-import { testMov } from "../ImageExporter";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import "../../Introduction.css";
 
@@ -38,9 +37,9 @@ const Introduction: FC = () => {
   });
 
   return (
-    <div className="" ref={refr}>
+    <div className=" h-[200vh] " ref={refr}>
       {/* <video
-        className=" fixed inset-0 h-[100vh] w-[100vw] z-10 bg-black "
+        className=" fixed inset-0 h-[100vh] w-[100vw]  "
         style={{ visibility: collapse ? "collapse" : "visible" }}
         src={testMov}
         muted

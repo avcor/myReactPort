@@ -1,5 +1,6 @@
 import React, { FC, MutableRefObject, useRef, useState } from "react";
 import { SCREENS, WORKS } from "./Constants";
+import { back3, back4 } from "./ImageExporter";
 
 interface AppContextType {
   backG: string;
@@ -9,7 +10,7 @@ interface AppContextType {
 }
 
 const AppContext = React.createContext<AppContextType>({
-  backG: "black",
+  backG: "",
   setBackG: (backG: string) => {},
   scroolY: 0,
   selectedWork: "-",
@@ -18,7 +19,7 @@ const AppContext = React.createContext<AppContextType>({
 const AppContextProvider: FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [backG, setBackG] = useState<string>("black");
+  const [backG, setBackG] = useState<string>("");
   const scroolY = 0;
   const selectedWork = "-";
   return (

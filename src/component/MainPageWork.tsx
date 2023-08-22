@@ -1,34 +1,49 @@
-import { FC, useContext } from "react";
-import { SCREENS, WORKS } from "../Constants";
+import { FC, useContext, useEffect, useRef } from "react";
+import { SCREENS, WORKS, thresholdView } from "../Constants";
 import Introduction from "./Introduction";
 import VelocityText from "./VelocityText";
 import "../../Introduction.css";
 import AppContext from "../AppContext";
 import ProjectImage1 from "./ProjectImage1";
 import ProjectImage2 from "./ProjectImage2";
+import { back2, back3, back4 } from "../ImageExporter";
+import { useInView } from "react-intersection-observer";
+import { useScroll } from "framer-motion";
 
-type props = {
-  backG: string;
-  setBackG: React.Dispatch<React.SetStateAction<string>>;
-  scroolY: React.MutableRefObject<number | undefined>;
-  selectedWork: React.MutableRefObject<WORKS>;
-  setActive: React.Dispatch<React.SetStateAction<SCREENS>>;
-};
+type props = {};
 
 const MainPageWork: FC<props> = ({}) => {
-  const { backG } = useContext(AppContext);
-  console.log("_______________________ " + backG);
+  const { backG, setBackG } = useContext(AppContext);
+
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setBackG("");
+    }
+  }, [inView]);
+
   return (
-    <div className={"text-white"}>
-      <Introduction />
+    <div
+      className=" text-white font-Montserrat"
+      style={{ background: backG === "" ? "black" : "" }}
+    >
+      <img className={` h-screen w-screen fixed -z-10`} src={backG}></img>
+      <div className=" backdrop-blur-xl">
+        <div ref={ref} className="w-[100vw]">
+          <Introduction />
 
-      <VelocityText />
+          <VelocityText />
+        </div>
 
-      <ProjectImage1 work={"HOME"} />
+        <ProjectImage1 work={"HOME"} />
 
-      <ProjectImage2 />
+        <ProjectImage2 />
 
-      <ProjectImage1 work={"MEMAY"} />
+        <ProjectImage1 work={"MEMAY"} />
+      </div>
     </div>
   );
 };
