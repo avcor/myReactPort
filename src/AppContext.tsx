@@ -6,6 +6,7 @@ interface AppContextType {
   setBackG: (backG: string) => void;
   onClickWork: WORKS;
   setOnClickWork: (w: WORKS) => void;
+  scrollYRef: React.MutableRefObject<number | null>;
 }
 
 const AppContext = React.createContext<AppContextType>({
@@ -13,6 +14,7 @@ const AppContext = React.createContext<AppContextType>({
   setBackG: () => {},
   onClickWork: "-",
   setOnClickWork: () => {},
+  scrollYRef: React.createRef(),
 });
 
 const AppContextProvider: FC<{ children: React.ReactNode }> = ({
@@ -20,10 +22,11 @@ const AppContextProvider: FC<{ children: React.ReactNode }> = ({
 }) => {
   const [backG, setBackG] = useState<string>("");
   const [onClickWork, setOnClickWork] = useState<WORKS>("-");
+  const scrollYRef = useRef<number>(0);
 
   return (
     <AppContext.Provider
-      value={{ backG, setBackG, onClickWork, setOnClickWork }}
+      value={{ backG, setBackG, onClickWork, setOnClickWork, scrollYRef }}
     >
       {children}
     </AppContext.Provider>

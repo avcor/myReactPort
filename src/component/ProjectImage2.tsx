@@ -7,7 +7,7 @@ import { thresholdView } from "../Constants";
 import { useMotionValueEvent, useScroll, useSpring } from "framer-motion";
 
 const ProjectImage2: FC = () => {
-  const { setBackG, setOnClickWork } = useContext(AppContext);
+  const { setBackG, setOnClickWork, scrollYRef } = useContext(AppContext);
   const refr = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -48,7 +48,7 @@ const ProjectImage2: FC = () => {
         <div
           className=" h-[70%] w-[50%] relative rounded-3xl overflow-hidden flex -ml-[7%] "
           onClick={() => {
-            // scroolY.current = window.scrollY;
+            scrollYRef.current = window.scrollY;
             setOnClickWork("ECG");
             // setActive("MODAL");
           }}

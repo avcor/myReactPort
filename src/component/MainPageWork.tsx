@@ -11,8 +11,16 @@ import NewP from "./NewP";
 type props = {};
 
 const MainPageWork: FC<props> = ({}) => {
-  const { backG, onClickWork } = useContext(AppContext);
-  const scrollY = useRef(0);
+  const { backG, onClickWork, setOnClickWork, scrollYRef } =
+    useContext(AppContext);
+
+  useEffect(() => {
+    if (onClickWork === "-") {
+      window.scrollTo(0, scrollYRef.current ?? 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [onClickWork]);
 
   return (
     <div
@@ -21,7 +29,16 @@ const MainPageWork: FC<props> = ({}) => {
     >
       <div className={` h-screen w-screen fixed -z-10 bg-black`}></div>
       <img className={` h-screen w-screen fixed -z-10`} src={backG}></img>
-      {onClickWork === "-" ? <MainPage /> : <NewP project={onClickWork} />}
+      {onClickWork === "-" ? (
+        <MainPage />
+      ) : (
+        <NewP
+          project={onClickWork}
+          onClose={() => {
+            setOnClickWork("-");
+          }}
+        />
+      )}
     </div>
   );
 };

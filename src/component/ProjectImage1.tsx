@@ -16,7 +16,7 @@ type props = {
 };
 
 const ProjectImage1: FC<props> = ({ work }) => {
-  const { setBackG, setOnClickWork } = useContext(AppContext);
+  const { setBackG, setOnClickWork, scrollYRef } = useContext(AppContext);
   const refr = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -57,7 +57,7 @@ const ProjectImage1: FC<props> = ({ work }) => {
         <div
           className=" h-[70%] w-[50%] relative rounded-3xl overflow-hidden flex "
           onClick={() => {
-            // scroolY.current = window.scrollY;
+            scrollYRef.current = window.scrollY;
             setOnClickWork(work);
             // setActive("MODAL");
           }}
@@ -73,7 +73,7 @@ const ProjectImage1: FC<props> = ({ work }) => {
             className="absolute m-0 h-[100%] w-[100%] blur-lg object-fill"
           />
         </div>
-        <div className="h-[70%] w-[50%]   flex  -ml-[10%] z-[15] flex-col justify-center ">
+        <div className=" w-[50%]   flex  -ml-[10%] z-[15] flex-col justify-center  ">
           <div className="text-4xl md:text-8xl ">Dozee Home</div>
           <p className=" text-2xl md:text-5xl mt-4">React Native</p>
           <p className=" text-xl md:text-4xl mt-1">(Android & iOS)</p>

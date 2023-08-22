@@ -18,11 +18,10 @@ import AppContext from "../AppContext";
 
 type props = {
   project: WORKS;
+  onClose: () => void;
 };
 
-const NewP: FC<props> = ({ project }) => {
-  const { setOnClickWork } = useContext(AppContext);
-
+const NewP: FC<props> = ({ project, onClose }) => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -53,7 +52,7 @@ const NewP: FC<props> = ({ project }) => {
             backgroundSize: "contain",
           }}
           onClick={() => {
-            setOnClickWork("-");
+            onClose();
           }}
         />
       </div>

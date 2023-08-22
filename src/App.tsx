@@ -10,7 +10,6 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setActive("MAINPAGE");
-      console.log("useeffect");
     }, 3500);
   }, []);
 
