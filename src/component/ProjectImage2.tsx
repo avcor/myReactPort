@@ -1,5 +1,5 @@
 import { FC, useContext, useEffect, useRef } from "react";
-import { back2, back3, back4, back5, handEcg } from "../ImageExporter";
+import { back5, handEcg } from "../ImageExporter";
 import { purple_abstract_video } from "../VideoExporter";
 import AppContext from "../AppContext";
 import { useInView } from "react-intersection-observer";
@@ -7,7 +7,7 @@ import { thresholdView } from "../Constants";
 import { useMotionValueEvent, useScroll, useSpring } from "framer-motion";
 
 const ProjectImage2: FC = () => {
-  const { setBackG } = useContext(AppContext);
+  const { setBackG, setOnClickWork } = useContext(AppContext);
   const refr = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -49,7 +49,7 @@ const ProjectImage2: FC = () => {
           className=" h-[70%] w-[50%] relative rounded-3xl overflow-hidden flex -ml-[7%] "
           onClick={() => {
             // scroolY.current = window.scrollY;
-            // selectedWork.current = "HOME";
+            setOnClickWork("ECG");
             // setActive("MODAL");
           }}
         >

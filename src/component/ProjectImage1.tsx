@@ -16,7 +16,7 @@ type props = {
 };
 
 const ProjectImage1: FC<props> = ({ work }) => {
-  const { setBackG } = useContext(AppContext);
+  const { setBackG, setOnClickWork } = useContext(AppContext);
   const refr = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -58,7 +58,7 @@ const ProjectImage1: FC<props> = ({ work }) => {
           className=" h-[70%] w-[50%] relative rounded-3xl overflow-hidden flex "
           onClick={() => {
             // scroolY.current = window.scrollY;
-            // selectedWork.current = "HOME";
+            setOnClickWork(work);
             // setActive("MODAL");
           }}
         >
