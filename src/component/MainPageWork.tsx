@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect } from "react";
+import { FC, useContext, useEffect, useRef } from "react";
 import Introduction from "./Introduction";
 import VelocityText from "./VelocityText";
 import "../../Introduction.css";
@@ -12,6 +12,7 @@ type props = {};
 
 const MainPageWork: FC<props> = ({}) => {
   const { backG, onClickWork } = useContext(AppContext);
+  const scrollY = useRef(0);
 
   return (
     <div
