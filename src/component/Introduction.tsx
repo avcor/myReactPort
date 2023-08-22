@@ -13,7 +13,6 @@ const Introduction: FC = () => {
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("me " + latest.toString());
     if (videoRef && videoRef.current) {
       if (latest > 0) {
         //scroll has started
