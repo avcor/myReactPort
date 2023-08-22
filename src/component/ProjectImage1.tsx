@@ -64,8 +64,7 @@ const ProjectImage1: FC<props> = ({ work }) => {
         >
           <motion.img
             src={work === "HOME" ? handHome : handMemay}
-            style={{ scale: scale }}
-            className="z-10 self-center absolute m-0 bg-opacity-30 "
+            className="z-10 self-center absolute m-0 bg-opacity-30"
           ></motion.img>
           <video
             ref={videoRef}

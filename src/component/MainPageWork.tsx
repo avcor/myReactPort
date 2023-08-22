@@ -27,11 +27,12 @@ const MainPageWork: FC<props> = ({}) => {
 
   return (
     <div
-      className=" text-white font-Montserrat"
+      className=" text-white font-Montserrat "
       style={{ background: backG === "" ? "black" : "" }}
     >
+      <div className={` h-screen w-screen fixed -z-10 bg-black`}></div>
       <img className={` h-screen w-screen fixed -z-10`} src={backG}></img>
-      <div className=" backdrop-blur-xl">
+      <div className=" backdrop-blur-xl ">
         <div ref={ref} className="w-[100vw]">
           <Introduction />
 
