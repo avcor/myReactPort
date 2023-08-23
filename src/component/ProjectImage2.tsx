@@ -40,7 +40,7 @@ const ProjectImage2: FC = () => {
   }, [inView]);
 
   return (
-    <div ref={refr}>
+    <div ref={refr} className=" h-[100vh]">
       <div
         ref={ref}
         className="flex flex-row-reverse h-[60vh] md:h-[100vh] items-center mr-10"

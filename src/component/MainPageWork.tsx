@@ -60,9 +60,9 @@ const MainPage = () => {
     <div className=" backdrop-blur-xl ">
       <div ref={ref} className="w-[100vw]">
         <Introduction />
-
-        <VelocityText />
       </div>
+
+      <VelocityText />
 
       <ProjectImage1 work={"HOME"} />
 
