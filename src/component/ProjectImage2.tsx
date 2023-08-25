@@ -65,9 +65,9 @@ const ProjectImage2: FC = () => {
           />
         </div>
         <div className="h-[70%] w-[50%] text-right flex z-[15] flex-col justify-center">
-          <div className="text-4xl md:text-8xl ">Dozee Home</div>
-          <p className=" text-2xl md:text-5xl mt-4">React Native</p>
-          <p className=" text-xl md:text-4xl mt-1">(Android & iOS)</p>
+          <div className="text-4xl md:text-8xl ">Dozee Tricorg Ecg</div>
+          <p className=" text-2xl md:text-5xl mt-4">Android</p>
+          <p className=" text-xl md:text-4xl mt-1">(with Tricorg Module)</p>
         </div>
       </div>
     </div>

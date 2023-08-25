@@ -19,7 +19,15 @@ const ProjectImage1: FC<props> = ({ work }) => {
   const { setBackG, setOnClickWork, scrollYRef } = useContext(AppContext);
   const refr = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  let Title = "Dozee Home";
+  let subTitle = "React Native";
+  let subTitle2 = "(Android & iOS)";
 
+  if (work === "MEMAY") {
+    Title = "Memay News";
+    subTitle = "Android";
+    subTitle2 = "";
+  }
   const { scrollYProgress } = useScroll({
     target: refr,
     offset: ["start end", "end end"],
@@ -74,9 +82,9 @@ const ProjectImage1: FC<props> = ({ work }) => {
           />
         </div>
         <div className=" w-[50%]   flex  -ml-[10%] z-[15] flex-col justify-center  ">
-          <div className="text-4xl md:text-8xl ">Dozee Home</div>
-          <p className=" text-2xl md:text-5xl mt-4">React Native</p>
-          <p className=" text-xl md:text-4xl mt-1">(Android & iOS)</p>
+          <div className="text-4xl md:text-8xl ">{Title}</div>
+          <p className=" text-2xl md:text-5xl mt-4">{subTitle}</p>
+          <p className=" text-xl md:text-4xl mt-1">{subTitle2}</p>
         </div>
       </div>
     </div>
