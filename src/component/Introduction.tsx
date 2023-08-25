@@ -12,6 +12,9 @@ const Introduction: FC = () => {
     target: refr,
   });
 
+  collapse;
+  vis;
+
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (videoRef && videoRef.current) {
       if (latest > 0) {

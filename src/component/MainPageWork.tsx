@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useRef } from "react";
+import { FC, useContext, useEffect } from "react";
 import Introduction from "./Introduction";
 import VelocityText from "./VelocityText";
 import "../../Introduction.css";
