@@ -1,0 +1,9 @@
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.snap-div {
+  background-color: lightblue;
+  scroll-snap-align: start; /* Snap align to the top of the viewport */
+}

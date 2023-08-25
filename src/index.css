@@ -5,35 +5,37 @@
 @font-face {
   font-family: "VujahdayScript";
   src: local("VujahdayScript"),
-   url("../src/fonts/VujahdayScript.ttf") format("truetype");;
- }
+    url("../src/fonts/VujahdayScript.ttf") format("truetype");
+}
 
- @font-face {
+@font-face {
   font-family: "MrsSaintDelafield-Regular";
   src: local("MrsSaintDelafield-Regular"),
-   url("../src/fonts/MrsSaintDelafield-Regular.ttf") format("truetype");;
- }
-
+    url("../src/fonts/MrsSaintDelafield-Regular.ttf") format("truetype");
+}
 
 @font-face {
   font-family: "Halimun";
-  src: local("Halimun"),
-   url("../src/fonts/Halimun.ttf") format("truetype");
+  src: local("Halimun"), url("../src/fonts/Halimun.ttf") format("truetype");
   font-weight: regular;
- }
-
- @font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat-Regular"),
-   url("../src/fonts/Montserrat-Regular.ttf") 
-   format("truetype");
-  font-weight: normal;
- }
-
- *::-webkit-scrollbar {
-  display: none;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat-Regular"),
+    url("../src/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Bit";
+  src: local("Bit"), url("../src/fonts/Bit.ttf") format("truetype");
+  font-weight: normal;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
