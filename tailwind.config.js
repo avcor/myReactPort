@@ -6,6 +6,9 @@ export default {
       scale: {
         75: "0.75",
       },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
     },
     fontFamily: {
       VujahdayScript: "VujahdayScript",

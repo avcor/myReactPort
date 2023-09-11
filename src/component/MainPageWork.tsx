@@ -7,6 +7,8 @@ import ProjectImage1 from "./ProjectImage1";
 import ProjectImage2 from "./ProjectImage2";
 import { useInView } from "react-intersection-observer";
 import NewP from "./NewP";
+import ProjectImage1_2 from "./ProjectImage1_2";
+import ProjectImage2_2 from "./ProjectImage2_2";
 
 type props = {};
 
@@ -24,8 +26,11 @@ const MainPageWork: FC<props> = ({}) => {
 
   return (
     <div
-      className=" text-white font-Montserrat "
-      style={{ background: backG === "" ? "black" : "" }}
+      className=" text-white font-Montserrat"
+      style={{
+        background: backG === "" ? "black" : "",
+        scrollBehavior: "smooth",
+      }}
     >
       <div className={` h-screen w-screen fixed -z-10 bg-black`}></div>
       <img className={` h-screen w-screen fixed -z-10`} src={backG}></img>
@@ -63,6 +68,10 @@ const MainPage = () => {
       </div>
 
       <VelocityText />
+
+      <ProjectImage1_2 />
+
+      <ProjectImage2_2 />
 
       <ProjectImage1 work={"HOME"} />
 
