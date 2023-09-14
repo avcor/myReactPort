@@ -9,6 +9,7 @@ import { useInView } from "react-intersection-observer";
 import NewP from "./NewP";
 import ProjectImage1_2 from "./ProjectImage1_2";
 import ProjectImage2_2 from "./ProjectImage2_2";
+import ProjectImage3_2 from "./ProjectImage3_2";
 
 type props = {};
 
@@ -72,6 +73,8 @@ const MainPage = () => {
       <ProjectImage1_2 />
 
       <ProjectImage2_2 />
+
+      <ProjectImage3_2 />
 
       <ProjectImage1 work={"HOME"} />
 

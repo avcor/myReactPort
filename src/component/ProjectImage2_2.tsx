@@ -1,6 +1,12 @@
 import { FC, useRef, useState } from "react";
 import {
   blue_flower,
+  ecg_mock1,
+  ecg_mock2,
+  ecg_mock3,
+  ecg_mock4,
+  ecg_mock6,
+  handEcg,
   handHome,
   home_mock0,
   home_mock6,
@@ -65,19 +71,19 @@ const ProjectImage1_2: FC = () => {
     >
       <div className=" h-[100vh] justify-center items-center flex relative">
         <div
-          className=" z-10  w-[45%] md:w-[85%]  flex relative rounded-full justify-center items-center"
+          className=" z-10  w-[50vw]  flex relative rounded-full justify-center items-center "
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
         >
-          <motion.img
-            src={yellow_flower}
-            className="h-full w-full absolute object-fill m-auto inset-0 -z-10 blur-[px] rounded-full"
+          <motion.div
+            // src={yellow_flower}
+            className=" w-[25vw] absolute  object-fill m-auto inset-0 -z-10 rounded-full aspect-square bg-yellow-300"
             style={{ scale: 1.3, rotate: moveYScroll }}
           />
           <motion.img
             style={{ scale: scaleScroll }}
-            className="h-full w-full object-contain mx-auto"
-            src={handHome}
+            className=" w-[25vw] object-scale-down aspect-square "
+            src={handEcg}
           />
           <motion.div
             animate={
@@ -100,10 +106,10 @@ const ProjectImage1_2: FC = () => {
           </motion.div>
         </div>
 
-        <MotionImg variants={variantUp} imgStr={home_mock6} onHover={onHover} />
+        <MotionImg variants={variantUp} imgStr={ecg_mock3} onHover={onHover} />
         <MotionImg
           variants={variantDown}
-          imgStr={home_mock0}
+          imgStr={ecg_mock4}
           onHover={onHover}
         />
       </div>
@@ -126,7 +132,7 @@ const MotionImg: FC<{
         }}
         variants={variants}
         animate={onHover ? "tilt" : "no"}
-        className=" h-[15%] md:h-[35%] absolute"
+        className=" h-[15%] md:h-[35%] absolute "
         src={imgStr}
       ></motion.img>
     </>

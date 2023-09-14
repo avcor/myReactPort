@@ -1,9 +1,18 @@
 import { FC, useRef, useState } from "react";
 import {
   blue_flower,
+  ecg_mock1,
+  ecg_mock2,
+  ecg_mock3,
+  ecg_mock4,
+  ecg_mock6,
+  handEcg,
   handHome,
+  handMemay,
   home_mock0,
   home_mock6,
+  white_flower,
+  yellow_flower,
 } from "../ImageExporter";
 import {
   Variants,
@@ -39,7 +48,7 @@ const variantDown: Variants = {
   },
 };
 
-const ProjectImage1_2: FC = () => {
+const ProjectImage3_2: FC = () => {
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -69,13 +78,14 @@ const ProjectImage1_2: FC = () => {
         >
           <motion.div
             // src={yellow_flower}
-            className=" w-[25vw] absolute  object-fill m-auto inset-0 -z-10 rounded-full aspect-square bg-red-500"
+            className=" w-[25vw] absolute  object-fill m-auto inset-0 -z-10 rounded-full aspect-square bg-yellow-300"
             style={{ scale: 1.3, rotate: moveYScroll }}
+            viewport={{ margin: "200px" }}
           />
           <motion.img
             style={{ scale: scaleScroll }}
             className=" w-[25vw] object-scale-down aspect-square "
-            src={handHome}
+            src={handMemay}
           />
           <motion.div
             animate={
@@ -98,10 +108,10 @@ const ProjectImage1_2: FC = () => {
           </motion.div>
         </div>
 
-        <MotionImg variants={variantUp} imgStr={home_mock6} onHover={onHover} />
+        <MotionImg variants={variantUp} imgStr={ecg_mock3} onHover={onHover} />
         <MotionImg
           variants={variantDown}
-          imgStr={home_mock0}
+          imgStr={ecg_mock4}
           onHover={onHover}
         />
       </div>
@@ -124,11 +134,11 @@ const MotionImg: FC<{
         }}
         variants={variants}
         animate={onHover ? "tilt" : "no"}
-        className=" h-[15%] md:h-[35%] absolute"
+        className=" h-[15%] md:h-[35%] absolute "
         src={imgStr}
       ></motion.img>
     </>
   );
 };
 
-export default ProjectImage1_2;
+export default ProjectImage3_2;

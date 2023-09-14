@@ -41,6 +41,10 @@ import mobileJson from "./assets/mobile.json";
 
 import testMov from "./assets/test.mp4";
 
+import blue_flower from "./assets/flower/blue_flower.png";
+import white_flower from "./assets/flower/white_flower.png";
+import yellow_flower from "./assets/flower/yellow_flower.png";
+
 export {
   ecg_mock0,
   ecg_mock1,
@@ -77,6 +81,9 @@ export {
   astranaut,
   mobileJson,
   testMov,
+  blue_flower,
+  white_flower,
+  yellow_flower,
 };
 
 const ecgGroupImg = [
