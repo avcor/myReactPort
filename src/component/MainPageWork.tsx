@@ -76,11 +76,11 @@ const MainPage = () => {
 
       <ProjectImage3_2 />
 
-      <ProjectImage1 work={"HOME"} />
+      {/* <ProjectImage1 work={"HOME"} />
 
       <ProjectImage2 />
 
-      <ProjectImage1 work={"MEMAY"} />
+      <ProjectImage1 work={"MEMAY"} /> */}
     </div>
   );
 };

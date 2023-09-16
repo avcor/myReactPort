@@ -11,16 +11,21 @@ import {
   handMemay,
   home_mock0,
   home_mock6,
+  mn0,
+  mn2,
+  mn3,
   white_flower,
   yellow_flower,
 } from "../ImageExporter";
 import {
   Variants,
   motion,
+  useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
 } from "framer-motion";
+import { orange_abstract_video, purple_abstract_video } from "../VideoExporter";
 
 const variantUp: Variants = {
   tilt: {
@@ -51,6 +56,7 @@ const variantDown: Variants = {
 const ProjectImage3_2: FC = () => {
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
   });
@@ -65,6 +71,14 @@ const ProjectImage3_2: FC = () => {
   );
   const moveYScroll = useTransform(scrollYProgressSpring, [0, 1], [0, 10]);
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (videoRef && videoRef.current && videoRef.current.duration) {
+      videoRef.current.currentTime = (videoRef.current.duration - 0.7) * latest;
+    }
+  });
+
+  console.log("duration 3 " + videoRef.current?.duration);
+
   return (
     <div
       ref={scrollRef}
@@ -72,19 +86,23 @@ const ProjectImage3_2: FC = () => {
     >
       <div className=" h-[100vh] justify-center items-center flex relative">
         <div
-          className=" z-10  w-[50vw]  flex relative rounded-full justify-center items-center "
+          className=" z-10  w-[50vw] aspect-square flex relative rounded-full justify-center items-center "
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
         >
-          <motion.div
-            // src={yellow_flower}
-            className=" w-[25vw] absolute  object-fill m-auto inset-0 -z-10 rounded-full aspect-square bg-yellow-300"
-            style={{ scale: 1.3, rotate: moveYScroll }}
-            viewport={{ margin: "200px" }}
+          <motion.video
+            ref={videoRef}
+            src={purple_abstract_video}
+            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square blur-[10px] object-fill"
+            style={{ scale: 1.3 }}
+          />
+          <div
+            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square border-[2px] "
+            style={{ scale: "130%" }}
           />
           <motion.img
-            style={{ scale: scaleScroll }}
-            className=" w-[25vw] object-scale-down aspect-square "
+            style={{ scale: scaleScroll, y: "5%" }}
+            className="md:w-[30vw] w-[40vw] object-scale-down aspect-square"
             src={handMemay}
           />
           <motion.div
@@ -108,12 +126,8 @@ const ProjectImage3_2: FC = () => {
           </motion.div>
         </div>
 
-        <MotionImg variants={variantUp} imgStr={ecg_mock3} onHover={onHover} />
-        <MotionImg
-          variants={variantDown}
-          imgStr={ecg_mock4}
-          onHover={onHover}
-        />
+        <MotionImg variants={variantUp} imgStr={mn3} onHover={onHover} />
+        <MotionImg variants={variantDown} imgStr={mn2} onHover={onHover} />
       </div>
     </div>
   );
@@ -134,7 +148,7 @@ const MotionImg: FC<{
         }}
         variants={variants}
         animate={onHover ? "tilt" : "no"}
-        className=" h-[15%] md:h-[35%] absolute "
+        className=" h-[25%] lg:h-[55%] absolute"
         src={imgStr}
       ></motion.img>
     </>

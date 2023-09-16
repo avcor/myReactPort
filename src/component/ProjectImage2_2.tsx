@@ -16,16 +16,18 @@ import {
 import {
   Variants,
   motion,
+  useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
 } from "framer-motion";
+import { orange_abstract_video } from "../VideoExporter";
 
 const variantUp: Variants = {
   tilt: {
     rotate: [0, -30],
     x: ["0vw", "-25vw"],
-    y: ["0vh", "-10vh"],
+    // y: ["0vh", "-25vh"],
     scale: [1, 1.2],
   },
   no: {
@@ -37,8 +39,8 @@ const variantUp: Variants = {
 const variantDown: Variants = {
   tilt: {
     rotate: [0, 30],
-    x: ["0vw", "20vw"],
-    y: [0, 100],
+    x: ["0vw", "25vw"],
+    y: ["0vh", "3vh"],
     scale: [1, 1.2],
   },
   no: {
@@ -50,8 +52,10 @@ const variantDown: Variants = {
 const ProjectImage1_2: FC = () => {
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
+    offset: ["0 0.9", "1.55 1"],
   });
   const scrollYProgressSpring = useSpring(scrollYProgress, {
     damping: 50,
@@ -64,6 +68,14 @@ const ProjectImage1_2: FC = () => {
   );
   const moveYScroll = useTransform(scrollYProgressSpring, [0, 1], [0, 10]);
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (videoRef && videoRef.current && videoRef.current.duration) {
+      videoRef.current.currentTime = (videoRef.current.duration - 0.2) * latest;
+    }
+  });
+
+  console.log("duration 2 " + videoRef.current?.duration);
+
   return (
     <div
       ref={scrollRef}
@@ -71,18 +83,23 @@ const ProjectImage1_2: FC = () => {
     >
       <div className=" h-[100vh] justify-center items-center flex relative">
         <div
-          className=" z-10  w-[50vw]  flex relative rounded-full justify-center items-center "
+          className=" z-10  w-[50vw] aspect-square flex relative rounded-full justify-center items-center "
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
         >
-          <motion.div
-            // src={yellow_flower}
-            className=" w-[25vw] absolute  object-fill m-auto inset-0 -z-10 rounded-full aspect-square bg-yellow-300"
-            style={{ scale: 1.3, rotate: moveYScroll }}
+          <motion.video
+            ref={videoRef}
+            src={orange_abstract_video}
+            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square blur-[10px] object-fill"
+            style={{ scale: 1.3 }}
+          />
+          <div
+            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square border-[2px] "
+            style={{ scale: "130%" }}
           />
           <motion.img
-            style={{ scale: scaleScroll }}
-            className=" w-[25vw] object-scale-down aspect-square "
+            style={{ scale: scaleScroll, y: "-10%" }}
+            className="md:w-[30vw] w-[40vw] object-scale-down aspect-square"
             src={handEcg}
           />
           <motion.div
@@ -132,7 +149,7 @@ const MotionImg: FC<{
         }}
         variants={variants}
         animate={onHover ? "tilt" : "no"}
-        className=" h-[15%] md:h-[35%] absolute "
+        className=" h-[25%] lg:h-[55%] absolute"
         src={imgStr}
       ></motion.img>
     </>
