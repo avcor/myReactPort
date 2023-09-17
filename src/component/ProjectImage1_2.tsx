@@ -78,7 +78,7 @@ const ProjectImage1_2: FC = () => {
     >
       <div className=" h-[100vh] justify-center items-center flex relative">
         <div
-          className=" z-10  w-[50vw] aspect-square flex relative rounded-full justify-center items-center "
+          className=" z-10  w-[25vw] aspect-square flex relative rounded-full justify-center items-center "
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
           onClick={() => {
@@ -111,8 +111,10 @@ const ProjectImage1_2: FC = () => {
                     opacity: [1, 0, 0],
                   }
             }
-            style={{ visibility: onHover ? "visible" : "collapse" }}
-            className="flex flex-col justify-center items-center absolute h-full w-full rounded-full bg-gradient-radial from-purple-400/90 via-transparent to-transparent"
+            style={{
+              visibility: onHover ? "visible" : "collapse",
+            }}
+            className="z-10  w-[35vw] aspect-square rounded-full flex flex-col justify-center items-center absolute bg-gradient-radial from-purple-400/90 via-transparent to-transparent"
           >
             <motion.div>
               <p className=" text-4xl font-semibold">Dozee</p>
