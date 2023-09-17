@@ -1,14 +1,16 @@
-import { FC, useEffect, useRef, useState } from "react";
-import { handHome, home_mock0, home_mock6 } from "../ImageExporter";
+import { FC, useContext, useEffect, useRef, useState } from "react";
+import { back4, handHome, home_mock0, home_mock6 } from "../ImageExporter";
 import {
   Variants,
   motion,
+  useInView,
   useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
 } from "framer-motion";
 import { red_abstract_video } from "../VideoExporter";
+import AppContext from "../AppContext";
 
 const variantUp: Variants = {
   tilt: {
@@ -40,6 +42,7 @@ const ProjectImage1_2: FC = () => {
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { setBackG, setOnClickWork, scrollYRef } = useContext(AppContext);
 
   const { scrollYProgress } = useScroll({
     target: scrollRef,
@@ -54,6 +57,13 @@ const ProjectImage1_2: FC = () => {
     [0, 0.5, 1],
     [0.9, 1.2, 1.2]
   );
+  // const isInView: boolean = useInView(scrollRef);
+
+  // useEffect(() => {
+  //   if (isInView) {
+  //     setBackG(back4);
+  //   }
+  // }, [isInView]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (videoRef && videoRef.current && videoRef.current.duration) {
@@ -71,6 +81,10 @@ const ProjectImage1_2: FC = () => {
           className=" z-10  w-[50vw] aspect-square flex relative rounded-full justify-center items-center "
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
+          onClick={() => {
+            scrollYRef.current = window.scrollY;
+            setOnClickWork("HOME");
+          }}
         >
           <motion.video
             ref={videoRef}

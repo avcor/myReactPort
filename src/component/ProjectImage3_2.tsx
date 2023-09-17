@@ -1,22 +1,5 @@
-import { FC, useRef, useState } from "react";
-import {
-  blue_flower,
-  ecg_mock1,
-  ecg_mock2,
-  ecg_mock3,
-  ecg_mock4,
-  ecg_mock6,
-  handEcg,
-  handHome,
-  handMemay,
-  home_mock0,
-  home_mock6,
-  mn0,
-  mn2,
-  mn3,
-  white_flower,
-  yellow_flower,
-} from "../ImageExporter";
+import { FC, useContext, useRef, useState } from "react";
+import { handMemay, mn2, mn3 } from "../ImageExporter";
 import {
   Variants,
   motion,
@@ -25,7 +8,8 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { orange_abstract_video, purple_abstract_video } from "../VideoExporter";
+import { purple_abstract_video } from "../VideoExporter";
+import AppContext from "../AppContext";
 
 const variantUp: Variants = {
   tilt: {
@@ -54,6 +38,7 @@ const variantDown: Variants = {
 };
 
 const ProjectImage3_2: FC = () => {
+  const { setBackG, setOnClickWork, scrollYRef } = useContext(AppContext);
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -69,7 +54,6 @@ const ProjectImage3_2: FC = () => {
     [0, 0.5, 1],
     [0.9, 1, 1]
   );
-  const moveYScroll = useTransform(scrollYProgressSpring, [0, 1], [0, 10]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (videoRef && videoRef.current && videoRef.current.duration) {
@@ -89,6 +73,10 @@ const ProjectImage3_2: FC = () => {
           className=" z-10  w-[50vw] aspect-square flex relative rounded-full justify-center items-center "
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
+          onClick={() => {
+            scrollYRef.current = window.scrollY;
+            setOnClickWork("MEMAY");
+          }}
         >
           <motion.video
             ref={videoRef}
@@ -119,9 +107,9 @@ const ProjectImage3_2: FC = () => {
             className="flex flex-col justify-center items-center absolute h-full w-full rounded-full bg-gradient-radial from-purple-400/90 via-transparent to-transparent"
           >
             <motion.div>
-              <p className=" text-4xl font-semibold">Dozee</p>
-              <p className=" text-3xl ">React Native</p>
-              <p className=" text-2xl ">(Android & iOS)</p>
+              <p className=" text-4xl font-semibold">Memay News</p>
+              <p className=" text-3xl ">Android</p>
+              <p className=" text-2xl "></p>
             </motion.div>
           </motion.div>
         </div>
