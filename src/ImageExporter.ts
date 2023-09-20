@@ -19,6 +19,14 @@ import home_mock9 from "../src/assets/home/home_mock9.png";
 import home_mock10 from "../src/assets/home/home_mock10.png";
 import home_mock11 from "../src/assets/home/home_mock11.png";
 
+import reactLogo from "../src/assets/logo/reactLogo.png";
+import androidLogo from "../src/assets/logo/android.png";
+import iosLogo from "../src/assets/logo/ios.png";
+import gitLogo from "../src/assets/logo/githubLogo.png";
+import firebaseLogo from "../src/assets/logo/firebaseLogo.png";
+import jestLogo from "../src/assets/logo/jestLogo.png";
+import watermelonLogo from "../src/assets/logo/watermelonDB.png";
+
 import mn0 from "../src/assets/memay/mn0.png";
 import mn1 from "../src/assets/memay/mn1.png";
 import mn2 from "../src/assets/memay/mn2.png";
@@ -34,16 +42,11 @@ import handMemay from "./assets/handMemay.png";
 
 import white_close from "./assets/close_white.png";
 
-import hubble_background from "./assets/background/hubble_background.png";
 import astranaut from "./assets/astranaut.png";
 
 import mobileJson from "./assets/mobile.json";
 
 import testMov from "./assets/test.mp4";
-
-import blue_flower from "./assets/flower/blue_flower.png";
-import white_flower from "./assets/flower/white_flower.png";
-import yellow_flower from "./assets/flower/yellow_flower.png";
 
 export {
   ecg_mock0,
@@ -77,13 +80,16 @@ export {
   handHome,
   handMemay,
   white_close,
-  hubble_background,
   astranaut,
   mobileJson,
   testMov,
-  blue_flower,
-  white_flower,
-  yellow_flower,
+  androidLogo,
+  iosLogo,
+  firebaseLogo,
+  gitLogo,
+  reactLogo,
+  jestLogo,
+  watermelonLogo,
 };
 
 const ecgGroupImg = [

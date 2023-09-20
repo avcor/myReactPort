@@ -3,17 +3,14 @@ import Introduction from "./Introduction";
 import VelocityText from "./VelocityText";
 import "../../Introduction.css";
 import AppContext from "../AppContext";
-import ProjectImage1 from "./ProjectImage1";
-import ProjectImage2 from "./ProjectImage2";
 import { useInView } from "react-intersection-observer";
 import NewP from "./NewP";
 import ProjectImage1_2 from "./ProjectImage1_2";
 import ProjectImage2_2 from "./ProjectImage2_2";
 import ProjectImage3_2 from "./ProjectImage3_2";
+import Introduction2 from "./Introdunction2";
 
-type props = {};
-
-const MainPageWork: FC<props> = ({}) => {
+const MainPageWork: FC = () => {
   const { backG, onClickWork, setOnClickWork, scrollYRef } =
     useContext(AppContext);
 
@@ -65,7 +62,8 @@ const MainPage = () => {
   return (
     <div className=" backdrop-blur-xl ">
       <div ref={ref} className="w-[100vw]">
-        <Introduction />
+        {/* <Introduction /> */}
+        <Introduction2 />
       </div>
 
       <VelocityText />
@@ -75,12 +73,6 @@ const MainPage = () => {
       <ProjectImage2_2 />
 
       <ProjectImage3_2 />
-
-      {/* <ProjectImage1 work={"HOME"} />
-
-      <ProjectImage2 />
-
-      <ProjectImage1 work={"MEMAY"} /> */}
     </div>
   );
 };
