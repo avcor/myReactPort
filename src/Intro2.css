@@ -31,17 +31,45 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: black;
+  background: "#232723";
   line-height: 300px;
   color: white;
   text-align: center;
   font-size: 60px;
   border-radius: 5px;
   backface-visibility: hidden;
+  box-shadow: white;
 }
 
 .back {
   background: black;
   color: white;
   transform: rotateY(180deg);
+}
+
+.sign {
+  font-size: 5.6rem;
+  text-align: center;
+  line-height: 1;
+  color: #c6e2ff;
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+}
+
+/*-- Animation Keyframes --*/
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
+      0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52),
+      0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78),
+      0 0 54px rgba(30, 132, 242, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98),
+      0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58),
+      0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88),
+      0 0 60px rgba(30, 132, 242, 1);
+  }
 }

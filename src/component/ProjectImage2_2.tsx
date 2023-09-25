@@ -68,7 +68,7 @@ const ProjectImage1_2: FC = () => {
   return (
     <div
       ref={scrollRef}
-      className=" h-[130vh] justify-center items-center flex"
+      className=" sm:h-[150vh] h-[100vh] justify-center items-center flex"
     >
       <div className=" h-[100vh] justify-center items-center flex relative">
         <div
