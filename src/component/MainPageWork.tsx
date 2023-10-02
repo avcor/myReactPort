@@ -9,6 +9,10 @@ import ProjectImage1_2 from "./ProjectImage1_2";
 import ProjectImage2_2 from "./ProjectImage2_2";
 import ProjectImage3_2 from "./ProjectImage3_2";
 import Introduction2 from "./Introdunction2";
+import { techGroupImg } from "../ImageExporter";
+import StaggeredList from "./StaggeredList";
+import NeonIntro from "./IntroNeon";
+import NavBar from "./Navbar";
 
 const MainPageWork: FC = () => {
   const { backG, onClickWork, setOnClickWork, scrollYRef } =
@@ -60,20 +64,22 @@ const MainPage = () => {
   }, [inView]);
 
   return (
-    <div className=" backdrop-blur-xl ">
-      <div ref={ref} className="w-[100vw]">
-        {/* <Introduction /> */}
-        <Introduction2 />
+    <>
+      <div className=" sticky z-30">
+        <NavBar />
       </div>
+      <div className=" ">
+        <NeonIntro />
 
-      <VelocityText />
+        {/* <VelocityText /> */}
 
-      <ProjectImage1_2 />
+        <ProjectImage1_2 />
 
-      <ProjectImage2_2 />
+        <ProjectImage2_2 />
 
-      <ProjectImage3_2 />
-    </div>
+        <ProjectImage3_2 />
+      </div>
+    </>
   );
 };
 

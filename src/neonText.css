@@ -1,0 +1,73 @@
+.neon {
+  /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; */
+  text-shadow: 0 0 5px #f6e52b, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff8c00;
+  color: white;
+  text-align: center;
+  text-align: center;
+}
+.neon-anim {
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    /*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+    text-shadow: 0 0 5px #f6e52b, 0 0 15px #ffa500, 0 0 20px #ffa500,
+      0 0 40px #ffa500, 0 0 60px #ff8c00;
+    color: white;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    /*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+    text-shadow: 0 0 5px #f6e52b, 0 0 15px #ffa500, 0 0 20px #ffa500,
+      0 0 40px #ffa500, 0 0 60px #ff8c00;
+
+    color: white;
+  }
+}
+
+.glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(100px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  position: fixed;
+}
