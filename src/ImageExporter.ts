@@ -69,6 +69,10 @@ import leaf_2 from "./assets/leaf/leaf_2.png";
 
 import frost_rect from "./assets/frostRect.png";
 
+import neon_circle_green from "./assets/circle/neon_circle_green.png";
+import neon_circle_purple from "./assets/circle/neon_circle_purple.png";
+import neon_circle_wwhite from "./assets/circle/neon_circle_white.png";
+
 export {
   ecg_mock0,
   ecg_mock1,
@@ -126,6 +130,9 @@ export {
   leaf_1,
   leaf_2,
   frost_rect,
+  neon_circle_green,
+  neon_circle_purple,
+  neon_circle_wwhite,
 };
 
 const ecgGroupImg = [

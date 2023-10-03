@@ -1,5 +1,12 @@
 import { FC, useContext, useEffect, useRef, useState } from "react";
-import { back4, handHome, home_mock0, home_mock6 } from "../ImageExporter";
+import {
+  back4,
+  handHome,
+  home_mock0,
+  home_mock6,
+  neon_circle_green,
+  neon_circle_purple,
+} from "../ImageExporter";
 import {
   Variants,
   motion,
@@ -74,9 +81,9 @@ const ProjectImage1_2: FC = () => {
   return (
     <div
       ref={scrollRef}
-      className="sm:h-[150vh] h-[100vh] justify-center items-center flex"
+      className="md:h-[150vh] h-[100vh] justify-center items-center flex "
     >
-      <div className=" h-[100vh] justify-center items-center flex relative">
+      <div className=" h-[100vh] justify-center items-center flex relative ">
         <div
           className=" z-10  w-[25vw] aspect-square flex relative rounded-full justify-center items-center "
           onMouseEnter={() => setOnHover(true)}
@@ -86,15 +93,10 @@ const ProjectImage1_2: FC = () => {
             setOnClickWork("HOME");
           }}
         >
-          <motion.video
-            ref={videoRef}
-            src={red_abstract_video}
-            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square blur-[10px]"
-            style={{ scale: 1.3 }}
-          />
-          <div
-            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square border-[2px]"
-            style={{ scale: "130%" }}
+          <img
+            className="md:w-[40vw] w-[50vw] absolute m-auto -z-10 rounded-full "
+            style={{ scale: "230%" }}
+            src={neon_circle_purple}
           />
           <motion.img
             style={{ scale: scaleScroll, y: "-10%" }}
@@ -117,9 +119,9 @@ const ProjectImage1_2: FC = () => {
             className="z-10  w-[35vw] aspect-square rounded-full flex flex-col justify-center items-center absolute bg-gradient-radial from-purple-400/90 via-transparent to-transparent"
           >
             <motion.div>
-              <p className=" text-4xl font-semibold">Dozee</p>
-              <p className=" text-3xl ">React Native</p>
-              <p className=" text-2xl ">(Android & iOS)</p>
+              <p className=" md:text-4xl font-semibold">Dozee</p>
+              <p className=" md:text-3xl ">React Native</p>
+              <p className=" md:text-2xl ">(Android & iOS)</p>
             </motion.div>
           </motion.div>
         </div>
