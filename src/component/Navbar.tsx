@@ -15,9 +15,9 @@ const NavBar: FC = () => {
         }}
         src={frost_rect}
       ></img>
-      <text className=" text-white">About Me </text>
-      <text className=" text-white">My Work</text>
-      <text className=" text-white">Contact</text>
+      <div className=" text-white">About Me </div>
+      <div className=" text-white">My Work</div>
+      <div className=" text-white">Contact</div>
     </div>
   );
 };

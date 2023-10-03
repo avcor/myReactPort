@@ -39,9 +39,10 @@ const ImgList: FC<{
       <div className="h-[20vh] w-full absolute z-10 top-0 bg-gradient-to-t from-transparent  to-black " />
       <div className="h-[15vh] w-full absolute z-10 bottom-0 bg-gradient-to-b from-transparent to-black " />
       <motion.div className=" " style={{ y: move1 }}>
-        {techGroupImg.map((val) => {
+        {techGroupImg.map((val, index) => {
           return (
             <img
+              key={val + index}
               src={val}
               className=" w-[15vh] aspect-square rounded-full object-cover  my-[20%]"
             />
@@ -50,9 +51,10 @@ const ImgList: FC<{
       </motion.div>
 
       <motion.div className=" " style={{ y: move2 }}>
-        {techGroupImg2.map((val) => {
+        {techGroupImg2.map((val, index) => {
           return (
             <img
+              key={val + index}
               src={val}
               className=" w-[15vh] aspect-square rounded-full object-cover my-[20%]"
             />
@@ -61,9 +63,10 @@ const ImgList: FC<{
       </motion.div>
 
       <motion.div className="" style={{ y: move1 }}>
-        {techGroupImg3.map((val) => {
+        {techGroupImg3.map((val, index) => {
           return (
             <img
+              key={val + index}
               src={val}
               className=" w-[15vh] aspect-square rounded-full object-cover  my-[20%]"
             />

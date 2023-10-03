@@ -1,5 +1,10 @@
 import { FC, useContext, useRef, useState } from "react";
-import { ecg_mock3, ecg_mock4, handEcg } from "../ImageExporter";
+import {
+  ecg_mock3,
+  ecg_mock4,
+  handEcg,
+  neon_circle_wwhite,
+} from "../ImageExporter";
 import {
   Variants,
   motion,
@@ -17,10 +22,17 @@ const variantUp: Variants = {
     x: ["0vw", "-25vw"],
     // y: ["0vh", "-25vh"],
     scale: [1, 1.2],
+    opacity: [0, 1],
+    transition: {
+      opacity: {
+        duration: 0.1,
+      },
+    },
   },
   no: {
     rotate: [-30, 0],
     scale: [1.2, 1],
+    opacity: 0,
   },
 };
 
@@ -30,14 +42,21 @@ const variantDown: Variants = {
     x: ["0vw", "25vw"],
     y: ["0vh", "3vh"],
     scale: [1, 1.2],
+    opacity: [0, 1],
+    transition: {
+      opacity: {
+        duration: 0.1,
+      },
+    },
   },
   no: {
     rotate: [30, 0],
     scale: [1.2, 1],
+    opacity: 0,
   },
 };
 
-const ProjectImage1_2: FC = () => {
+const ProjectImage2_2: FC = () => {
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -68,7 +87,7 @@ const ProjectImage1_2: FC = () => {
   return (
     <div
       ref={scrollRef}
-      className=" sm:h-[150vh] h-[100vh] justify-center items-center flex"
+      className=" lg:h-[150vh] h-[100vh] justify-center items-center flex"
     >
       <div className=" h-[100vh] justify-center items-center flex relative">
         <div
@@ -80,19 +99,14 @@ const ProjectImage1_2: FC = () => {
             setOnClickWork("ECG");
           }}
         >
-          <motion.video
-            ref={videoRef}
-            src={orange_abstract_video}
-            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square blur-[10px] object-fill"
-            style={{ scale: 1.3 }}
-          />
-          <div
-            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square border-[2px] "
-            style={{ scale: "130%" }}
+          <img
+            className="md:w-[20vw] w-[50vw] absolute m-auto -z-10 rounded-full "
+            style={{ scale: "200%" }}
+            src={neon_circle_wwhite}
           />
           <motion.img
             style={{ scale: scaleScroll, y: "-10%" }}
-            className="md:w-[30vw] w-[40vw] object-scale-down aspect-square"
+            className="md:w-[20vw] w-[40vw] object-scale-down aspect-square"
             src={handEcg}
           />
           <motion.div
@@ -109,9 +123,9 @@ const ProjectImage1_2: FC = () => {
             className="z-10  w-[35vw] aspect-square rounded-full flex flex-col justify-center items-center absolute bg-gradient-radial from-purple-400/90 via-transparent to-transparent"
           >
             <motion.div>
-              <p className=" text-4xl font-semibold">Tricorg Ecg</p>
-              <p className=" text-3xl ">Android</p>
-              <p className=" text-2xl ">(with Tricorg Module)</p>
+              <p className=" md:text-4xl font-semibold">Tricorg Ecg</p>
+              <p className=" md:text-3xl ">Android</p>
+              <p className=" md:text-2xl ">(with Tricorg Module)</p>
             </motion.div>
           </motion.div>
         </div>
@@ -149,4 +163,4 @@ const MotionImg: FC<{
   );
 };
 
-export default ProjectImage1_2;
+export default ProjectImage2_2;

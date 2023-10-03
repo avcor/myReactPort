@@ -1,5 +1,5 @@
 import { FC, useContext, useRef, useState } from "react";
-import { handMemay, mn2, mn3 } from "../ImageExporter";
+import { handMemay, mn2, mn3, neon_circle_green } from "../ImageExporter";
 import {
   Variants,
   motion,
@@ -8,7 +8,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { purple_abstract_video } from "../VideoExporter";
 import AppContext from "../AppContext";
 
 const variantUp: Variants = {
@@ -17,10 +16,17 @@ const variantUp: Variants = {
     x: ["0vw", "-25vw"],
     y: ["0vh", "-10vh"],
     scale: [1, 1.2],
+    opacity: [0, 1],
+    transition: {
+      opacity: {
+        duration: 0.1,
+      },
+    },
   },
   no: {
     rotate: [-30, 0],
     scale: [1.2, 1],
+    opacity: 0,
   },
 };
 
@@ -30,10 +36,17 @@ const variantDown: Variants = {
     x: ["0vw", "20vw"],
     y: [0, 100],
     scale: [1, 1.2],
+    opacity: [0, 1],
+    transition: {
+      opacity: {
+        duration: 0.1,
+      },
+    },
   },
   no: {
     rotate: [30, 0],
     scale: [1.2, 1],
+    opacity: 0,
   },
 };
 
@@ -66,7 +79,7 @@ const ProjectImage3_2: FC = () => {
   return (
     <div
       ref={scrollRef}
-      className="sm:h-[150vh] h-[100vh]  justify-center items-center flex"
+      className="md:h-[130vh] h-[100vh]  justify-center items-center flex"
     >
       <div className=" h-[100vh] justify-center items-center flex relative">
         <div
@@ -78,19 +91,14 @@ const ProjectImage3_2: FC = () => {
             setOnClickWork("MEMAY");
           }}
         >
-          <motion.video
-            ref={videoRef}
-            src={purple_abstract_video}
-            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square blur-[10px] object-fill"
-            style={{ scale: 1.3 }}
-          />
-          <div
-            className="md:w-[25vw] w-[50vw] absolute m-auto inset-0 -z-10 rounded-full aspect-square border-[2px] "
-            style={{ scale: "130%" }}
+          <img
+            className="md:w-[22vw] w-[50vw] absolute m-auto -z-10 rounded-full "
+            style={{ scale: "190%" }}
+            src={neon_circle_green}
           />
           <motion.img
             style={{ scale: scaleScroll, y: "5%" }}
-            className="md:w-[30vw] w-[40vw] object-scale-down aspect-square"
+            className="md:w-[22vw] w-[40vw] object-scale-down aspect-square"
             src={handMemay}
           />
           <motion.div

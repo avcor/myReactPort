@@ -50,7 +50,7 @@ const MainPageWork: FC = () => {
   );
 };
 
-const MainPage = () => {
+const MainPage: FC = () => {
   const { setBackG } = useContext(AppContext);
 
   const { ref, inView } = useInView({
@@ -71,12 +71,13 @@ const MainPage = () => {
 
       {/* <VelocityText /> */}
       <StaggeredList />
+      <section>
+        <ProjectImage1_2 />
 
-      <ProjectImage1_2 />
+        <ProjectImage2_2 />
 
-      <ProjectImage2_2 />
-
-      <ProjectImage3_2 />
+        <ProjectImage3_2 />
+      </section>
     </>
   );
 };

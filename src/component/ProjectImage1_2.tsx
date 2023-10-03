@@ -25,10 +25,17 @@ const variantUp: Variants = {
     x: ["0vw", "-25vw"],
     y: ["0vh", "-10vh"],
     scale: [1, 1.2],
+    opacity: [0, 1],
+    transition: {
+      opacity: {
+        duration: 0.1,
+      },
+    },
   },
   no: {
     rotate: [-30, 0],
     scale: [1.2, 1],
+    opacity: 0,
   },
 };
 
@@ -38,10 +45,17 @@ const variantDown: Variants = {
     x: ["0vw", "20vw"],
     y: [0, 100],
     scale: [1, 1.2],
+    opacity: [0, 1],
+    transition: {
+      opacity: {
+        duration: 0.1,
+      },
+    },
   },
   no: {
     rotate: [30, 0],
     scale: [1.2, 1],
+    opacity: 0,
   },
 };
 
@@ -81,7 +95,7 @@ const ProjectImage1_2: FC = () => {
   return (
     <div
       ref={scrollRef}
-      className="md:h-[150vh] h-[100vh] justify-center items-center flex "
+      className="lg:h-[120vh] h-[100vh] justify-center items-center flex  "
     >
       <div className=" h-[100vh] justify-center items-center flex relative ">
         <div
@@ -94,13 +108,13 @@ const ProjectImage1_2: FC = () => {
           }}
         >
           <img
-            className="md:w-[40vw] w-[50vw] absolute m-auto -z-10 rounded-full "
+            className="md:w-[20vw] w-[50vw] absolute m-auto -z-10 rounded-full "
             style={{ scale: "230%" }}
             src={neon_circle_purple}
           />
           <motion.img
             style={{ scale: scaleScroll, y: "-10%" }}
-            className="md:w-[30vw] w-[40vw] object-scale-down aspect-square"
+            className="md:w-[20vw] w-[40vw] object-scale-down aspect-square"
             src={handHome}
           />
           <motion.div
