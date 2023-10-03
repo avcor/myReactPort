@@ -4,7 +4,7 @@ import "../neonText.css";
 
 const NavBar: FC = () => {
   return (
-    <div className="fixed w-[60vw] h-[7vh] backdrop-blur-md bg-[#747474]/30 rounded-2xl overflow-hidden border-2 border-white/50 top-[2vh] left-1/2 -translate-x-1/2 justify-around items-center flex">
+    <div className="z-30 fixed w-[60vw] h-[7vh] backdrop-blur-md bg-[#747474]/30 rounded-2xl overflow-hidden border-2 border-white/50 top-[2vh] left-1/2 -translate-x-1/2 justify-around items-center flex">
       <img
         style={{
           height: "100%",

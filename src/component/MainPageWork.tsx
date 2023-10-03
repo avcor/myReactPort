@@ -65,20 +65,18 @@ const MainPage = () => {
 
   return (
     <>
-      <div className=" sticky z-30">
-        <NavBar />
-      </div>
-      <div className=" ">
-        <NeonIntro />
+      <NavBar />
 
-        {/* <VelocityText /> */}
+      <NeonIntro />
 
-        <ProjectImage1_2 />
+      {/* <VelocityText /> */}
+      <StaggeredList />
 
-        <ProjectImage2_2 />
+      <ProjectImage1_2 />
 
-        <ProjectImage3_2 />
-      </div>
+      <ProjectImage2_2 />
+
+      <ProjectImage3_2 />
     </>
   );
 };
