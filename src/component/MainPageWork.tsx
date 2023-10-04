@@ -1,9 +1,8 @@
-import { FC, useContext, useEffect } from "react";
+import { FC, RefObject, useContext, useEffect, useRef, useState } from "react";
 import Introduction from "./Introduction";
 import VelocityText from "./VelocityText";
 import "../../Introduction.css";
 import AppContext from "../AppContext";
-import { useInView } from "react-intersection-observer";
 import NewP from "./NewP";
 import ProjectImage1_2 from "./ProjectImage1_2";
 import ProjectImage2_2 from "./ProjectImage2_2";
@@ -12,7 +11,9 @@ import Introduction2 from "./Introdunction2";
 import { techGroupImg } from "../ImageExporter";
 import StaggeredList from "./StaggeredList";
 import NeonIntro from "./IntroNeon";
+import { useInView } from "framer-motion";
 import NavBar from "./Navbar";
+import ContactMe from "./ContactMe";
 
 const MainPageWork: FC = () => {
   const { backG, onClickWork, setOnClickWork, scrollYRef } =
@@ -51,35 +52,62 @@ const MainPageWork: FC = () => {
 };
 
 const MainPage: FC = () => {
-  const { setBackG } = useContext(AppContext);
+  const meRef = useRef<HTMLDivElement>(null);
+  const workRef = useRef(null);
+  const contactRef = useRef(null);
 
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
+  const meIsInView = useInView(meRef);
+  const workIsInView = useInView(workRef);
+  const contactIsInView = useInView(contactRef);
+
+  const [visState, setVisState] = useState("me");
 
   useEffect(() => {
-    if (inView) {
-      setBackG("");
+    if (meIsInView) {
+      setVisState("me");
     }
-  }, [inView]);
+    if (workIsInView) {
+      setVisState("work");
+    }
+    if (contactIsInView) {
+      setVisState("contact");
+    }
+  }, [meIsInView, workIsInView, contactIsInView]);
 
   return (
     <>
-      <NavBar />
+      <NavBar
+        visState={visState}
+        refs={{
+          meRef: meRef,
+          workRef: workRef,
+          contactRef: contactRef,
+        }}
+      />
 
-      <NeonIntro />
+      <div ref={meRef}>
+        <NeonIntro />
 
-      {/* <VelocityText /> */}
-      <StaggeredList />
-      <section>
+        <StaggeredList />
+      </div>
+
+      <div ref={workRef}>
         <ProjectImage1_2 />
 
         <ProjectImage2_2 />
 
         <ProjectImage3_2 />
-      </section>
+      </div>
+
+      <div ref={contactRef}>
+        <ContactMe />
+      </div>
     </>
   );
 };
+
+{
+  /* <VelocityText /> */
+}
 
 export default MainPageWork;
