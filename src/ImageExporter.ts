@@ -72,6 +72,11 @@ import frost_rect from "./assets/frostRect.png";
 import neon_circle_green from "./assets/circle/neon_circle_green.png";
 import neon_circle_purple from "./assets/circle/neon_circle_purple.png";
 import neon_circle_wwhite from "./assets/circle/neon_circle_white.png";
+import neon_reactangle from "./assets/rectangle/neon_reactangle.png";
+
+import github_icon from "./assets/logo/github_icon.png";
+import linkedin_icon from "./assets/logo/linkedin_icon.png";
+import email_icon from "./assets/logo/email_icon.png";
 
 export {
   ecg_mock0,
@@ -133,6 +138,10 @@ export {
   neon_circle_green,
   neon_circle_purple,
   neon_circle_wwhite,
+  neon_reactangle,
+  github_icon,
+  email_icon,
+  linkedin_icon,
 };
 
 const ecgGroupImg = [

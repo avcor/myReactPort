@@ -1,6 +1,5 @@
 import { FC, RefObject, useEffect, useState } from "react";
 import { frost_rect } from "../ImageExporter";
-import "../neonText.css";
 
 type prop = {
   visState: string;

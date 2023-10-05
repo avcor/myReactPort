@@ -63,11 +63,8 @@
   }
 }
 
-.glass {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(100px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  position: fixed;
+.neon-effect {
+  box-shadow: 0 0 0.5rem #cc01ff, 0 0 1.5rem #cc01ffd4, 0 0 2rem #cc01ffab,
+    inset 0 0 0.5rem #cc01ff, inset 0 0 1.5rem #cc01ffd4,
+    inset 0 0 2rem #cc01ffab;
 }

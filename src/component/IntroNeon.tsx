@@ -46,10 +46,10 @@ const NeonIntro: FC = () => {
           src={leaf_first_top1}
           className=" absolute h-[15vw] md:h-[12vw] left-[35%]"
         />
-        <img
+        {/* <img
           src={leaf_first_top2}
           className=" absolute h-[15vw] md:h-[12vw] left-[45%]"
-        />
+        /> */}
         <img
           src={leaf_first_top3}
           className=" absolute h-[20vh] md:h-[30vh] left-[50%]"
