@@ -1,0 +1,56 @@
+body {
+  background: #eee;
+}
+
+.card {
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  margin: -150px;
+  float: left;
+  perspective: 500px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: "#232723";
+  line-height: 300px;
+  color: white;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  box-shadow: white;
+}
+
+.back {
+  background: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.blur-ed {
+  /* -webkit-mask-image: linear-gradient(#000, rgba(92, 42, 42, 0));
+  mask-image: linear-gradient(#000, rgba(125, 66, 66, 0.889));
+  mask-image: linear-gradient(#000, rgba(125, 66, 66, 0.889)); */
+
+  background: linear-gradient(rgb(0, 0, 0), transparent);
+}

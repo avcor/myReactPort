@@ -1,75 +1,99 @@
-import { FC, useContext, useEffect } from "react";
-import Introduction from "./Introduction";
-import VelocityText from "./VelocityText";
+import { FC, useContext, useEffect, useRef, useState } from "react";
+
 import "../../Introduction.css";
 import AppContext from "../AppContext";
-import ProjectImage1 from "./ProjectImage1";
-import ProjectImage2 from "./ProjectImage2";
-import { useInView } from "react-intersection-observer";
-import NewP from "./NewP";
+import ProjectImage1_2 from "./ProjectImage1_2";
+import ProjectImage2_2 from "./ProjectImage2_2";
+import ProjectImage3_2 from "./ProjectImage3_2";
+import StaggeredList from "./StaggeredList";
+import NeonIntro from "./IntroNeon";
+import { useInView } from "framer-motion";
+import NavBar from "./Navbar";
+import ContactMe from "./ContactMe";
+import MyModal from "./myModal";
+import Gallery from "./Gallery";
 
-type props = {};
-
-const MainPageWork: FC<props> = ({}) => {
-  const { backG, onClickWork, setOnClickWork, scrollYRef } =
-    useContext(AppContext);
-
-  useEffect(() => {
-    if (onClickWork === "-") {
-      window.scrollTo(0, scrollYRef.current ?? 0);
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [onClickWork]);
+const MainPageWork: FC = () => {
+  const { backG, onClickWork, setOnClickWork } = useContext(AppContext);
 
   return (
     <div
-      className=" text-white font-Montserrat "
-      style={{ background: backG === "" ? "black" : "" }}
+      className=" text-white font-Montserrat"
+      style={{
+        background: backG === "" ? "black" : "",
+        scrollBehavior: "smooth",
+      }}
     >
       <div className={` h-screen w-screen fixed -z-10 bg-black`}></div>
       <img className={` h-screen w-screen fixed -z-10`} src={backG}></img>
-      {onClickWork === "-" ? (
-        <MainPage />
-      ) : (
-        <NewP
-          project={onClickWork}
-          onClose={() => {
-            setOnClickWork("-");
-          }}
-        />
-      )}
+      {/* {onClickWork === "-" ? <MainPage /> : null} */}
+      <MainPage />
+      {onClickWork !== "-" ? (
+        <MyModal>
+          <Gallery
+            project={onClickWork}
+            onClose={() => {
+              setOnClickWork("-");
+            }}
+          />
+        </MyModal>
+      ) : null}
     </div>
   );
 };
 
-const MainPage = () => {
-  const { setBackG } = useContext(AppContext);
+const MainPage: FC = () => {
+  const meRef = useRef<HTMLDivElement>(null);
+  const workRef = useRef(null);
+  const contactRef = useRef(null);
 
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
+  const meIsInView = useInView(meRef);
+  const workIsInView = useInView(workRef);
+  const contactIsInView = useInView(contactRef);
+
+  const [visState, setVisState] = useState("me");
 
   useEffect(() => {
-    if (inView) {
-      setBackG("");
+    if (meIsInView) {
+      setVisState("me");
     }
-  }, [inView]);
+    if (workIsInView) {
+      setVisState("work");
+    }
+    if (contactIsInView) {
+      setVisState("contact");
+    }
+  }, [meIsInView, workIsInView, contactIsInView]);
 
   return (
-    <div className=" backdrop-blur-xl ">
-      <div ref={ref} className="w-[100vw]">
-        <Introduction />
+    <>
+      <NavBar
+        visState={visState}
+        refs={{
+          meRef: meRef,
+          workRef: workRef,
+          contactRef: contactRef,
+        }}
+      />
+
+      <div ref={meRef}>
+        <NeonIntro />
+
+        <StaggeredList />
       </div>
 
-      <VelocityText />
+      <div ref={workRef}>
+        <ProjectImage1_2 />
 
-      <ProjectImage1 work={"HOME"} />
+        <ProjectImage2_2 />
 
-      <ProjectImage2 />
+        <ProjectImage3_2 />
+      </div>
 
-      <ProjectImage1 work={"MEMAY"} />
-    </div>
+      <div ref={contactRef}>
+        <ContactMe />
+      </div>
+    </>
   );
 };
 

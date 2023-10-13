@@ -19,6 +19,19 @@ import home_mock9 from "../src/assets/home/home_mock9.png";
 import home_mock10 from "../src/assets/home/home_mock10.png";
 import home_mock11 from "../src/assets/home/home_mock11.png";
 
+import reactLogo from "../src/assets/logo/reactLogo.png";
+import androidLogo from "../src/assets/logo/android.png";
+import iosLogo from "../src/assets/logo/ios.png";
+import gitLogo from "../src/assets/logo/githubLogo.png";
+import firebaseLogo from "../src/assets/logo/firebaseLogo.png";
+import jestLogo from "../src/assets/logo/jestLogo.png";
+import watermelonLogo from "../src/assets/logo/watermelonDB.png";
+import htmlLogo from "../src/assets/logo/htmlLogo.png";
+import cssLogo from "../src/assets/logo/cssLogo.png";
+import kotlinLogo from "../src/assets/logo/kotlinLogo.png";
+import swiftLogo from "../src/assets/logo/swiftLogo.jpg";
+import tailwindLogo from "../src/assets/logo/tailwindLogo.jpg";
+
 import mn0 from "../src/assets/memay/mn0.png";
 import mn1 from "../src/assets/memay/mn1.png";
 import mn2 from "../src/assets/memay/mn2.png";
@@ -34,12 +47,36 @@ import handMemay from "./assets/handMemay.png";
 
 import white_close from "./assets/close_white.png";
 
-import hubble_background from "./assets/background/hubble_background.png";
 import astranaut from "./assets/astranaut.png";
 
 import mobileJson from "./assets/mobile.json";
 
 import testMov from "./assets/test.mp4";
+import lower_leaf from "./assets/leaf/lower_leaf.png";
+import neon_tube from "./assets/leaf/neon_tube.png";
+import leaf_top_right from "./assets/leaf/leaf_top_right.png";
+import leaf_top_left from "./assets/leaf/leaf_top_left.png";
+import leaf_bottom_right from "./assets/leaf/leaf_bottom_right.png";
+import leaf_first_left_Bottom from "./assets/leaf/leaf_first_left_Bottom.png";
+import leaf_first_left_top from "./assets/leaf/leaf_first_left_top.png";
+import leaf_first_top1 from "./assets/leaf/leaf_first_top_1.png";
+import leaf_first_top2 from "./assets/leaf/leaf_first_top_2.png";
+import leaf_first_top3 from "./assets/leaf/leaf_first_top_3.png";
+import leaf_first_left_1 from "./assets/leaf/leaf_first_left_1.png";
+import leaf_first_left_2 from "./assets/leaf/leaf_first_left_2.png";
+import leaf_1 from "./assets/leaf/leaf_1.png";
+import leaf_2 from "./assets/leaf/leaf_2.png";
+
+import frost_rect from "./assets/frostRect.png";
+
+import neon_circle_green from "./assets/circle/neon_circle_green.png";
+import neon_circle_purple from "./assets/circle/neon_circle_purple.png";
+import neon_circle_wwhite from "./assets/circle/neon_circle_white.png";
+import neon_reactangle from "./assets/rectangle/neon_reactangle.png";
+
+import github_icon from "./assets/logo/github_icon.png";
+import linkedin_icon from "./assets/logo/linkedin_icon.png";
+import email_icon from "./assets/logo/email_icon.png";
 
 export {
   ecg_mock0,
@@ -73,10 +110,38 @@ export {
   handHome,
   handMemay,
   white_close,
-  hubble_background,
   astranaut,
   mobileJson,
   testMov,
+  androidLogo,
+  iosLogo,
+  firebaseLogo,
+  gitLogo,
+  reactLogo,
+  jestLogo,
+  watermelonLogo,
+  lower_leaf,
+  neon_tube,
+  leaf_top_right,
+  leaf_top_left,
+  leaf_bottom_right,
+  leaf_first_left_Bottom,
+  leaf_first_left_top,
+  leaf_first_top1,
+  leaf_first_top2,
+  leaf_first_top3,
+  leaf_first_left_1,
+  leaf_first_left_2,
+  leaf_1,
+  leaf_2,
+  frost_rect,
+  neon_circle_green,
+  neon_circle_purple,
+  neon_circle_wwhite,
+  neon_reactangle,
+  github_icon,
+  email_icon,
+  linkedin_icon,
 };
 
 const ecgGroupImg = [
@@ -106,4 +171,15 @@ const homeGroupImg = [
 
 const mnGroupImg = [mn0, mn1, mn2, mn3];
 
-export { ecgGroupImg, homeGroupImg, mnGroupImg };
+const techGroupImg = [watermelonLogo, androidLogo, iosLogo, gitLogo];
+const techGroupImg2 = [firebaseLogo, jestLogo, reactLogo, htmlLogo];
+const techGroupImg3 = [cssLogo, kotlinLogo, swiftLogo, tailwindLogo];
+
+export {
+  ecgGroupImg,
+  homeGroupImg,
+  mnGroupImg,
+  techGroupImg,
+  techGroupImg2,
+  techGroupImg3,
+};
