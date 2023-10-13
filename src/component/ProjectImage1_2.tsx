@@ -98,8 +98,15 @@ const ProjectImage1_2: FC = () => {
       className="lg:h-[120vh] h-[100vh] justify-center items-center flex  "
     >
       <div className=" h-[100vh] justify-center items-center flex relative ">
+        <MotionImg variants={variantUp} imgStr={home_mock6} onHover={onHover} />
+        <MotionImg
+          variants={variantDown}
+          imgStr={home_mock0}
+          onHover={onHover}
+        />
+
         <div
-          className=" z-10  w-[25vw] aspect-square flex relative rounded-full justify-center items-center "
+          className="  w-[25vw] aspect-square flex relative rounded-full justify-center items-center "
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
           onClick={() => {
@@ -108,7 +115,7 @@ const ProjectImage1_2: FC = () => {
           }}
         >
           <img
-            className="md:w-[20vw] w-[50vw] absolute m-auto -z-10 rounded-full "
+            className="md:w-[20vw] w-[50vw] absolute m-auto rounded-full "
             style={{ scale: "230%" }}
             src={neon_circle_purple}
           />
@@ -130,7 +137,7 @@ const ProjectImage1_2: FC = () => {
             style={{
               visibility: onHover ? "visible" : "collapse",
             }}
-            className="z-10  w-[35vw] aspect-square rounded-full flex flex-col justify-center items-center absolute bg-gradient-radial from-purple-400/90 via-transparent to-transparent"
+            className="  w-[35vw] aspect-square rounded-full flex flex-col justify-center items-center absolute bg-gradient-radial from-purple-400/90 via-transparent to-transparent"
           >
             <motion.div>
               <p className=" md:text-4xl font-semibold">Dozee</p>
@@ -139,13 +146,6 @@ const ProjectImage1_2: FC = () => {
             </motion.div>
           </motion.div>
         </div>
-
-        <MotionImg variants={variantUp} imgStr={home_mock6} onHover={onHover} />
-        <MotionImg
-          variants={variantDown}
-          imgStr={home_mock0}
-          onHover={onHover}
-        />
       </div>
     </div>
   );

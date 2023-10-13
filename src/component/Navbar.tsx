@@ -12,7 +12,7 @@ type prop = {
 
 const NavBar: FC<prop> = ({ visState, refs }) => {
   return (
-    <div className="z-30 fixed w-[60vw] h-[7vh] backdrop-blur-md bg-[#747474]/30 rounded-2xl overflow-hidden border-2 border-white/50 top-[2vh] left-1/2 -translate-x-1/2 justify-around items-center flex">
+    <div className="z-10 fixed w-[60vw] h-[7vh] backdrop-blur-md bg-[#747474]/30 rounded-2xl overflow-hidden border-2 border-white/50 top-[2vh] left-1/2 -translate-x-1/2 justify-around items-center flex">
       <img
         style={{
           zIndex: -1,

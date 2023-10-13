@@ -36,8 +36,6 @@ const ImgList: FC<{
 }> = ({ move1, move2 }) => {
   return (
     <div className="w-full flex flex-row justify-evenly items-center relative bg-slate-00 p-10 overflow-hidden">
-      <div className="h-[20vh] w-full absolute z-10 top-0 bg-gradient-to-t from-transparent  to-black " />
-      <div className="h-[15vh] w-full absolute z-10 bottom-0 bg-gradient-to-b from-transparent to-black " />
       <motion.div className=" " style={{ y: move1 }}>
         {techGroupImg.map((val, index) => {
           return (
@@ -73,6 +71,9 @@ const ImgList: FC<{
           );
         })}
       </motion.div>
+
+      <div className="h-[20vh] w-full absolute top-0 bg-gradient-to-t from-transparent  to-black " />
+      <div className="h-[15vh] w-full absolute bottom-0 bg-gradient-to-b from-transparent to-black " />
     </div>
   );
 };
