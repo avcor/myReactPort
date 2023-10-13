@@ -73,7 +73,7 @@ const ProjectImage3_2: FC = () => {
   return (
     <div
       ref={scrollRef}
-      className="md:h-[130vh] h-[100vh]  justify-center items-center flex"
+      className="md:h-[130vh] h-[80vh]  justify-center items-center flex"
     >
       <div className=" h-[100vh] justify-center items-center flex relative">
         <MotionImg variants={variantUp} imgStr={mn3} onHover={onHover} />
