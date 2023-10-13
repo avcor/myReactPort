@@ -101,8 +101,4 @@ const MainPage: FC = () => {
   );
 };
 
-{
-  /* <VelocityText /> */
-}
-
 export default MainPageWork;
