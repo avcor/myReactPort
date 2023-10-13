@@ -1,22 +1,18 @@
-import { FC, useContext, useEffect, useRef, useState } from "react";
+import { FC, useContext, useRef, useState } from "react";
 import {
-  back4,
   handHome,
   home_mock0,
   home_mock6,
-  neon_circle_green,
   neon_circle_purple,
 } from "../ImageExporter";
 import {
   Variants,
   motion,
-  useInView,
   useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
 } from "framer-motion";
-import { red_abstract_video } from "../VideoExporter";
 import AppContext from "../AppContext";
 
 const variantUp: Variants = {
@@ -63,7 +59,7 @@ const ProjectImage1_2: FC = () => {
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { setBackG, setOnClickWork, scrollYRef } = useContext(AppContext);
+  const { setOnClickWork, scrollYRef } = useContext(AppContext);
 
   const { scrollYProgress } = useScroll({
     target: scrollRef,

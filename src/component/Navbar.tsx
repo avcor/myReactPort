@@ -1,4 +1,4 @@
-import { FC, RefObject, useEffect, useState } from "react";
+import { FC, RefObject } from "react";
 import { frost_rect } from "../ImageExporter";
 
 type prop = {

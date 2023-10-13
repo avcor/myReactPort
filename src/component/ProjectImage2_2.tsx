@@ -13,7 +13,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { orange_abstract_video } from "../VideoExporter";
 import AppContext from "../AppContext";
 
 const variantUp: Variants = {
@@ -60,7 +59,7 @@ const ProjectImage2_2: FC = () => {
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { setBackG, setOnClickWork, scrollYRef } = useContext(AppContext);
+  const { setOnClickWork, scrollYRef } = useContext(AppContext);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
     offset: ["0 0.9", "1.55 1"],

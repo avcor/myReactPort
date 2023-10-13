@@ -3,7 +3,6 @@ import { handMemay, mn2, mn3, neon_circle_green } from "../ImageExporter";
 import {
   Variants,
   motion,
-  useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
@@ -51,7 +50,7 @@ const variantDown: Variants = {
 };
 
 const ProjectImage3_2: FC = () => {
-  const { setBackG, setOnClickWork, scrollYRef } = useContext(AppContext);
+  const { setOnClickWork, scrollYRef } = useContext(AppContext);
   const [onHover, setOnHover] = useState(false);
   const scrollRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);

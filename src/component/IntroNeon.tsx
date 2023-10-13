@@ -8,7 +8,6 @@ import {
   leaf_first_left_Bottom,
   leaf_first_left_top,
   leaf_first_top1,
-  leaf_first_top2,
   leaf_first_top3,
   leaf_top_left,
   leaf_top_right,

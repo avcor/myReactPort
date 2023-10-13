@@ -1,7 +1,6 @@
 import { FC } from "react";
 import {
   email_icon,
-  github_icon,
   leaf_1,
   leaf_bottom_right,
   leaf_first_left_1,
@@ -11,7 +10,6 @@ import {
   leaf_first_top1,
   leaf_first_top2,
   linkedin_icon,
-  neon_reactangle,
 } from "../ImageExporter";
 import "../neonText.css";
 import { motion, useAnimation } from "framer-motion";
@@ -60,7 +58,6 @@ const variants = {
 };
 
 const ContactList = () => {
-  const controls_github = useAnimation();
   const control_linkedin = useAnimation();
   const control_email = useAnimation();
 
@@ -68,20 +65,6 @@ const ContactList = () => {
     <div className="relative h-[50vh] md:w-[20vh] w-[20vh]  rounded-xl ">
       <div className="absolute -inset-1 bg-gradient-to-t from-[#FF4C4C] to-[#FE00E5] blur-md"></div>
       <div className="flex flex-col absolute h-full w-full bg-black rounded-xl border-2 border-slate-300 justify-evenly items-center">
-        {/* <motion.img
-          className="z-10 w-[50%] aspect-square cursor-pointer "
-          src={github_icon}
-          onMouseEnter={() => {
-            controls_github.start("start");
-          }}
-          onMouseLeave={() => {
-            controls_github.stop();
-            controls_github.set("reset");
-          }}
-          onClick={()=>window.open("someLink", "_blank")}
-          variants={variants}
-          animate={controls_github}
-        /> */}
         <motion.img
           className="z-10 w-[50%] aspect-square cursor-pointer "
           src={linkedin_icon}

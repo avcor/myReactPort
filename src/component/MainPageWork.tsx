@@ -1,8 +1,7 @@
-import { FC, RefObject, useContext, useEffect, useRef, useState } from "react";
+import { FC, useContext, useEffect, useRef, useState } from "react";
 
 import "../../Introduction.css";
 import AppContext from "../AppContext";
-import NewP from "./NewP";
 import ProjectImage1_2 from "./ProjectImage1_2";
 import ProjectImage2_2 from "./ProjectImage2_2";
 import ProjectImage3_2 from "./ProjectImage3_2";
@@ -11,14 +10,11 @@ import NeonIntro from "./IntroNeon";
 import { useInView } from "framer-motion";
 import NavBar from "./Navbar";
 import ContactMe from "./ContactMe";
-
-import ReactDOM, { createPortal } from "react-dom";
 import MyModal from "./myModal";
 import Gallery from "./Gallery";
 
 const MainPageWork: FC = () => {
-  const { backG, onClickWork, setOnClickWork, scrollYRef } =
-    useContext(AppContext);
+  const { backG, onClickWork, setOnClickWork } = useContext(AppContext);
 
   return (
     <div

@@ -60,7 +60,7 @@ const Images: FC<{
   src: string;
   id: number;
   description: (string | JSX.Element)[];
-}> = ({ src, id, description }) => {
+}> = ({ src }) => {
   return (
     <>
       <div className=" h-full items-center flex justify-center">
