@@ -103,6 +103,7 @@ const ProjectImage2_2: FC = () => {
             scrollYRef.current = window.scrollY;
             setOnClickWork("ECG");
           }}
+          style={{ cursor: "pointer", }}
         >
           <img
             className="md:w-[20vw] w-[50vw] absolute m-auto rounded-full "
@@ -118,11 +119,11 @@ const ProjectImage2_2: FC = () => {
             animate={
               onHover
                 ? {
-                    opacity: [0, 0, 1],
-                  }
+                  opacity: [0, 0, 1],
+                }
                 : {
-                    opacity: [1, 0, 0],
-                  }
+                  opacity: [1, 0, 0],
+                }
             }
             style={{ visibility: onHover ? "visible" : "collapse" }}
             className=" w-[35vw] aspect-square rounded-full flex flex-col justify-center items-center absolute bg-gradient-radial from-purple-400/90 via-transparent to-transparent"

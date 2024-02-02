@@ -91,9 +91,11 @@ const ProjectImage1_2: FC = () => {
   return (
     <div
       ref={scrollRef}
+
       className="lg:h-[120vh] h-[90vh] justify-center items-center flex  "
     >
-      <div className=" h-[100vh] justify-center items-center flex relative ">
+      <div className=" h-[100vh] justify-center items-center flex relative "
+        style={{ cursor: "pointer", }}>
         <MotionImg variants={variantUp} imgStr={home_mock6} onHover={onHover} />
         <MotionImg
           variants={variantDown}
@@ -124,11 +126,11 @@ const ProjectImage1_2: FC = () => {
             animate={
               onHover
                 ? {
-                    opacity: [0, 0, 1],
-                  }
+                  opacity: [0, 0, 1],
+                }
                 : {
-                    opacity: [1, 0, 0],
-                  }
+                  opacity: [1, 0, 0],
+                }
             }
             style={{
               visibility: onHover ? "visible" : "collapse",
